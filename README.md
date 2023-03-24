@@ -1,5 +1,5 @@
 # Group Goals
-![image](https://user-images.githubusercontent.com/122232068/225915808-486f6cdb-43ad-40fc-b3df-85ec6debfc36.png)
+![image](https://i.imgur.com/5RIIekP.png)
 
 ### Created March 2023
 #### By 
