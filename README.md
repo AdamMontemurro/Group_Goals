@@ -1,5 +1,5 @@
 # Group Goal
-![image](https://i.imgur.com/5RIIekP.png)
+![image](https://i.imgur.com/5RIIekP.png width="50%" height="50%")
 
 ### Created March 2023
 #### By 
