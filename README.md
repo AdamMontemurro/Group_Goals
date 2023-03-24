@@ -1,5 +1,7 @@
 # Group Goal
+<div style="text-align:center">
 <img src="https://i.imgur.com/5RIIekP.png" width="50%" height="50%">
+</div>
 
 ### Created March 2023
 #### By 
