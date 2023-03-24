@@ -25,4 +25,5 @@ Group Goal is a comprehensive web application designed to help groups and indivi
 
 ### Future Updates
 - [] Chat Feature
+- Login/Register
 ### Credits
