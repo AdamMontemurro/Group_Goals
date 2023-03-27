@@ -34,10 +34,10 @@ module.exports = {
         allowNull: false
       },
       groups: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
       tasks: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
       createdAt: {
         allowNull: false,

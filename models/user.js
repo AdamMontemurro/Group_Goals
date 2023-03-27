@@ -38,8 +38,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    groups: DataTypes.ARRAY,
-    tasks: DataTypes.ARRAY
+    groups: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER)
+    },
+    tasks: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER)
+    }
   }, {
     sequelize,
     modelName: 'User',
