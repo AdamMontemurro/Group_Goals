@@ -10,10 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       groupMembers: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        defaultValue: []
       },
       tasks: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        defaultValue: []
       },
       owner: {
         type:Sequelize.INTEGER,

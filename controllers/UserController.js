@@ -73,14 +73,14 @@ const Register = async (req, res) => {
     try {
       const { userid,groupid } = req.body
       const user = await User.findByPk(userid)
+      console.log(user)
       const currentgroups = user.groups
-      console.log(currentgroups)
       const updatedgroups = [...currentgroups, groupid] 
       await user.update(
         {groups:updatedgroups},
         {where: {id:userid}, returning:true}
         )
-      res.send()
+        res.send()
     } catch (error) {
       throw error
     }

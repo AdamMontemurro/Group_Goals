@@ -14,7 +14,13 @@ const AssignMember = async(req,res) => {
   try {
     const { userid,groupid } = req.body
     const group = await Group.findByPk(groupid)
-
+    const currentGroupMembers = group.groupMembers
+    const updatedMembers = [...currentGroupMembers, userid] 
+    await group.update(
+      {groupMembers:updatedMembers},
+      {where: {id:groupid}, returning:true}
+      )
+      res.send(`Added user with id of ${userid} to group with id of ${groupid}`)
   } catch (error) {
     throw error
   }
