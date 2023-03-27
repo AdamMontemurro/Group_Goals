@@ -11,7 +11,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => res.json({ message: 'Server Works' }))
+app.get('/', (req, res) => res.json({ message: 'Group Goal' }))
 
 app.use('/users', UserRouter)
 
