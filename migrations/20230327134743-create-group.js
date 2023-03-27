@@ -15,6 +15,14 @@ module.exports = {
       tasks: {
         type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
+      owner: {
+        type:Sequelize.INTEGER,
+        allowNull: false
+      },
+      name: {
+        type:Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

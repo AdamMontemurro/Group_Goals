@@ -39,10 +39,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     groups: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER)
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      defaultValue: []
     },
     tasks: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER)
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      defaultValue: []
     }
   }, {
     sequelize,

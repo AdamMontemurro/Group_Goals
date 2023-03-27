@@ -3,6 +3,7 @@ const cors = require('cors')
 const logger = require('morgan')
 const app = express()
 const UserRouter= require('./routes/UserRouter')
+const GroupRouter = require('./routes/GroupRouter')
 
 const PORT = process.env.PORT || 3001
 
@@ -14,5 +15,6 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => res.json({ message: 'Group Goal' }))
 
 app.use('/users', UserRouter)
+app.use('/groups', GroupRouter)
 
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))

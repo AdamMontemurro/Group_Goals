@@ -15,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Group.init({
     groupMembers: DataTypes.ARRAY(DataTypes.INTEGER),
-    tasks: DataTypes.ARRAY(DataTypes.INTEGER)
+    tasks: DataTypes.ARRAY(DataTypes.INTEGER),
+    owner: DataTypes.INTEGER,
+    name : DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Group',
