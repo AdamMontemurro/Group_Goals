@@ -3,8 +3,16 @@ const {User} = require('../models')
 
 const CreateTask = async (req,res) => {
   try{
+    const { owner} = req.body
+    const user = await User.findByPk(owner)
     const task = await Task.create({...req.body})
     res.send(task)
+    const currentTasks = user.tasks
+    const updatedTasks = [...currentTasks, task.id] 
+    await user.update(
+      {tasks:updatedTasks},
+      {where: {id:owner}, returning:true}
+      )
   } catch (error) {
     throw error
   }
