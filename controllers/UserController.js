@@ -73,7 +73,6 @@ const Register = async (req, res) => {
     try {
       const { userid,groupid } = req.body
       const user = await User.findByPk(userid)
-      console.log(user)
       const currentgroups = user.groups
       const updatedgroups = [...currentgroups, groupid] 
       await user.update(

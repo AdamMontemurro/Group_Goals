@@ -13,8 +13,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      owner: {
+        type:Sequelize.INTEGER
+      },
       group: {
         type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.STRING
       },
       completed: {
         type: Sequelize.BOOLEAN
