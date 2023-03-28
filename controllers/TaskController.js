@@ -9,6 +9,7 @@ const CreateTask = async (req,res) => {
     res.send(task)
     const currentTasks = user.tasks
     const updatedTasks = [...currentTasks, task.id] 
+    //add task to owners task
     await user.update(
       {tasks:updatedTasks},
       {where: {id:owner}, returning:true}
@@ -18,14 +19,32 @@ const CreateTask = async (req,res) => {
   }
 }
 
-const DeleteTask = async (req, res) => {
+const RemoveTaskFromUser = async (req, res) => {
   try {
-    await Task.destroy({ where: { id: req.params.id } })
-    res.send({ msg: 'Task Removed', payload: req.params.id, status: 'Ok' })
+    const taskId = parseInt(req.params.id)
+    const { owner} = req.body
+    const user = await User.findByPk(owner)
+    const currentTasks = [...user.tasks]
+    currentTasks.splice(currentTasks.indexOf(taskId),1)
+    user.tasks = currentTasks
+    user.save()
+    res.send()
   } catch (error) {
     throw error
   }
 }
+
+const DeleteTask = async (req, res) => {
+  try {
+    await Task.destroy({ where: { id: req.params.id } })
+    res.send({ msg: 'Task Removed', payload: req.params.id, status: 'Ok' })
+} catch (error) {
+  throw error
+}
+}
+
+
+
 
 
 const EditTask = async (req, res) => {
@@ -56,5 +75,6 @@ module.exports = {
   CreateTask,
   DeleteTask,
   GetUserTasks,
-  EditTask
+  EditTask,
+  RemoveTaskFromUser
 }
