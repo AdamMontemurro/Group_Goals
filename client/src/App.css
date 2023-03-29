@@ -1,5 +1,107 @@
-.App {
-  text-align: center;
+body {
+
+    text-align: left;
+    background-color: #171c24;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 50px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+.header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #222b36;
+  height: 50px;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #3c4752;
+  z-index: 12;
+}
+
+.userArea {
+    height: 50px;
+    margin-right: 10px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+
+}
+
+.statusButton {
+  color: rgb(60, 71, 82);
+  background: white;
+  border: 2px solid rgb(60, 71, 82);
+  padding: 5px 15px;
+}
+
+.sideBar {
+  height: 100vh!important;
+  float: left;
+  position: fixed;
+  margin-top: 50px;
+  border-left-color: #3c4752;
+  border-bottom-color: #3c4752;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-right: 1px solid #3c4752;
+  border-top: 1px solid #3c4752;
+  color: #adadad;
+  height: 100%;
+  width: 270px;
+  min-width: 270px;
+  text-align: left;
+  transition: width,left,right,.3s;
+  position: relative;
+  z-index: 10;
+}
+
+.main-content {
+    padding-top: 50px;
+    margin-left: 270px;
+}
+
+h2 {
+  display: block;
+  font-size: 1.8em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: rgb(228, 177, 39);
+  padding-left: 60px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: underline;
+}
+
+p {
+  padding-left: 65px;
+}
+
+.sideNavList {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item-div {
+  font-size: 1.5em;
+  margin: .5em;
+  min-height: 40px;
+}
