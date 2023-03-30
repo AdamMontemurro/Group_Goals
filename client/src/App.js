@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path='/' element={<Landing />} />
+      <Route path='/' element={<Landing user={user} setUser={setUser}/>} />
       <Route path='/login' element={<Login setUser={setUser} />} />
       </Routes>
     </div>

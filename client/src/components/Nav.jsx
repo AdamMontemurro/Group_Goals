@@ -1,7 +1,13 @@
 import {  Link, useNavigate } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({user, setUser}) => {
   const navigate = useNavigate()
+
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
+    navigate('/Login')
+  }
 
 
   return (
@@ -11,7 +17,8 @@ const Nav = () => {
       </div>
       <div className='userArea'>
         {/* <a className='statusButton' style={{ cursor: "pointer" }} onClick={()=>navigate('/')}>Login</a> */}
-        <Link to="/Login" className='statusButton' activeclassname="active" style={{ cursor: "pointer" }}>Login</Link>
+        {user ? <a style={{ cursor: "pointer" }} onClick={() => handleLogOut()}>Logout</a>
+        : <Link to="/Login" className='statusButton' activeclassname="active" style={{ cursor: "pointer" }}>Login</Link> }
       </div>
     </div>
   )

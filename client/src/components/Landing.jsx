@@ -2,12 +2,12 @@ import Nav from "./Nav"
 import Sidebar from "./Sidebar"
 import Wrapper from "./Wrapper"
 
-const Landing = () => {
+const Landing = ({user,setUser}) => {
   return (
     <div>
-      <Nav />
+      <Nav user={user} setUser={setUser}/>
       <Sidebar />
-      <Wrapper />
+      <Wrapper user={user}/>
       
     </div>
   )

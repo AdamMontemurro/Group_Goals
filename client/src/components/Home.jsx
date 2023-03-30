@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const Home = () => {
+const Home = ({user}) => {
 
 
   return (
@@ -10,7 +10,6 @@ const Home = () => {
       <h2>Group Goal</h2>
       <p> Welcome to Group Goal. The app designed to help you stay productive.</p>
       <p>All our tools are free to use right inside your browser!</p>
-      
     </div>
   )
 }

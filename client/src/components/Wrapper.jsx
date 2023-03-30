@@ -1,10 +1,10 @@
 import React from 'react'
 import Home from './Home'
 
-const Wrapper = () => {
+const Wrapper = ({user}) => {
   return (
     <div className='main-content'>
-      <Home />
+      <Home user={user}/>
     </div>
   )
 }
