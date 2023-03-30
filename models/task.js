@@ -10,13 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Task.belongsTo(models.User)
     }
   }
   Task.init({
     name: DataTypes.STRING,
-    owner: DataTypes.INTEGER,
-    group: DataTypes.INTEGER,
     description:DataTypes.STRING,
     completed: DataTypes.BOOLEAN,
     category: DataTypes.STRING

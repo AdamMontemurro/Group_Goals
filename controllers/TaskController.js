@@ -3,36 +3,13 @@ const {User} = require('../models')
 
 const CreateTask = async (req,res) => {
   try{
-    const { owner} = req.body
-    const user = await User.findByPk(owner)
     const task = await Task.create({...req.body})
     res.send(task)
-    const currentTasks = user.tasks
-    const updatedTasks = [...currentTasks, task.id] 
-    //add task to owners task
-    await user.update(
-      {tasks:updatedTasks},
-      {where: {id:owner}, returning:true}
-      )
   } catch (error) {
     throw error
   }
 }
 
-const RemoveTaskFromUser = async (req, res) => {
-  try {
-    const taskId = parseInt(req.params.id)
-    const { owner} = req.body
-    const user = await User.findByPk(owner)
-    const currentTasks = [...user.tasks]
-    currentTasks.splice(currentTasks.indexOf(taskId),1)
-    user.tasks = currentTasks
-    user.save()
-    res.send()
-  } catch (error) {
-    throw error
-  }
-}
 
 const DeleteTask = async (req, res) => {
   try {
@@ -42,9 +19,6 @@ const DeleteTask = async (req, res) => {
   throw error
 }
 }
-
-
-
 
 
 const EditTask = async (req, res) => {
@@ -76,5 +50,5 @@ module.exports = {
   DeleteTask,
   GetUserTasks,
   EditTask,
-  RemoveTaskFromUser
 }
+

@@ -33,14 +33,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      groups: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
-        defaultValue: []
-      },
-      tasks: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
-        defaultValue: []
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

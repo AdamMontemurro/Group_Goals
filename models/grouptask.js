@@ -3,29 +3,28 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Group extends Model {
+  class groupTask extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Group.belongsToMany(models.User, {
-        foreignKey: 'userId',
-        through: 'group_users'
-      })
-
-      Group.hasMany(models.groupTask, {
+      groupTask.belongsTo(models.Group, {
+        foreignKey: 'groupId',
+        onDelete: 'CASCADE',
       })
     }
   }
-  Group.init({
-    owner: DataTypes.INTEGER,
-    name : DataTypes.STRING
+  groupTask.init({
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    completed: DataTypes.BOOLEAN,
+    category: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Group',
-    tableName:"groups"
+    modelName: 'groupTask',
+    tabelName: 'grouptasks'
   });
-  return Group;
+  return groupTask;
 };

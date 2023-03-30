@@ -10,7 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      User.belongsToMany(models.Group, {
+        foreignKey: 'groupId',
+        through: 'group_users'
+      })
+
+      User.hasMany(models.Task)
     }
   }
   User.init({
@@ -37,14 +42,6 @@ module.exports = (sequelize, DataTypes) => {
     userName: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    groups: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
-      defaultValue: []
-    },
-    tasks: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
-      defaultValue: []
     }
   }, {
     sequelize,
