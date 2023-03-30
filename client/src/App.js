@@ -1,15 +1,38 @@
 import './App.css';
-import Nav from './components/Nav';
-import Sidebar from './components/Sidebar';
-import Wrapper from './components/Wrapper';
-
+import Template from './components/Template';
+import { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
+  const CheckSession = async () => {
+    try {
+      const res = await Client.get('/user/session')
+      return res.data
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
   return (
     <div className="App">
-      <Nav />
-      <Sidebar />
-      <Wrapper />
+      <Routes className="Routes">
+      <Route path='/' element={<Template />} />
+      </Routes>
     </div>
   );
 }
