@@ -1,7 +1,9 @@
 import './App.css';
-import Template from './components/Template';
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Client from './services/api'
+import Login from './components/Login-Register/Login';
+import Landing from './components/Landing';
 
 function App() {
 
@@ -30,8 +32,9 @@ function App() {
 
   return (
     <div className="App">
-      <Routes className="Routes">
-      <Route path='/' element={<Template />} />
+      <Routes>
+      <Route path='/' element={<Landing />} />
+      <Route path='/login' element={<Login/>} />
       </Routes>
     </div>
   );

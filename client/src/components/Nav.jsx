@@ -1,4 +1,4 @@
-import {  useNavigate } from 'react-router-dom'
+import {  Link, useNavigate } from 'react-router-dom'
 
 const Nav = () => {
   const navigate = useNavigate()
@@ -6,11 +6,12 @@ const Nav = () => {
 
   return (
     <div className='header'>
-      <div>
-      <img src="/static/media/LElogo.99ac6fe7.png" alt="logo"></img>
+      <div style={{ cursor: "pointer" }} onClick={()=>navigate('/')} >
+      <img src="/static/media/LElogo.99ac6fe7.png" alt="logo" ></img>
       </div>
       <div className='userArea'>
-        <button className='statusButton'>Login</button>
+        {/* <a className='statusButton' style={{ cursor: "pointer" }} onClick={()=>navigate('/')}>Login</a> */}
+        <Link to="/Login" className='statusButton' activeclassname="active" style={{ cursor: "pointer" }}>Login</Link>
       </div>
     </div>
   )

@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState} from 'react'
+
 
 
 const Home = () => {
+
+
   return (
     <div className='home'>
       <h2>Group Goal</h2>
