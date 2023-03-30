@@ -5,7 +5,7 @@ import Register from "./Register"
 import { useState } from 'react'
 
 
-const Login = () => {
+const Login = ({setUser}) => {
 
   const [registerToggle, setRegisterToggle] = useState(true)
 
@@ -13,7 +13,7 @@ const Login = () => {
     <div>
       <Nav />
       <Sidebar />
-      {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle}/> : <Register setRegisterToggle={setRegisterToggle} /> }
+      {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle} setUser={setUser}/> : <Register setRegisterToggle={setRegisterToggle} /> }
     </div>
   )
 }
