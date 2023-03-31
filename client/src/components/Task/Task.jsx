@@ -14,6 +14,7 @@ const Task = ({user}) => {
 
 const [newTaskForm, setNewTaskForm] = useState(false)
 const [formValues, setFormValues] = useState(initialState)
+const [userTasks, setUserTasks] = useState([])
 
 const handleChange = (e) => {
   setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -36,7 +37,7 @@ const addTask = async (data) => {
 const getUserTasks = async (data) => {
   try {
     const res= await Client.get(`/tasks/${userId}`, data)
-    return res.data
+    setUserTasks(res.data)
   } catch (error) {
     
   }
@@ -52,7 +53,7 @@ const onSubmit = (e) => {
 
 
 useEffect(() => {
-  
+  getUserTasks()
 }, [])
 
   return (
