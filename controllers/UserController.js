@@ -26,7 +26,8 @@ const Register = async (req, res) => {
       if (matched) {
         let payload = {
           id: user.id,
-          email: user.email
+          email: user.email,
+          name: user.firstName
         }
         let token = middleware.createToken(payload)
         return res.send({ user:payload, token })

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 
 
 const Notepad = ({note, setNote}) => {
@@ -15,10 +14,9 @@ const Notepad = ({note, setNote}) => {
       <br></br>
       <textarea rows="12" cols="50"
       name='note'
-
       onChange={handleChange}
+      defaultValue={note}
       >
-        {note}
       </textarea>
     </div>
   )

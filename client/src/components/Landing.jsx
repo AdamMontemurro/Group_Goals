@@ -24,14 +24,14 @@ const [note, setNote] = useState('')
   )}else if (tab === 2) {
     return (
       <div>
-        <Nav user={user} setUser={setUser}/>
+        <Nav user={user} setUser={setUser} setTab={setTab}/>
         <Sidebar setTab={setTab}/>
         <Calculator />
       </div>
     )} else if (tab === 3) {
       return (
         <div>
-          <Nav user={user} setUser={setUser}v/>
+          <Nav user={user} setUser={setUser} setTab={setTab}/>
           <Sidebar setTab={setTab}/>
           <Notepad setNote={setNote} note={note} />
         </div>
@@ -43,7 +43,7 @@ const [note, setNote] = useState('')
       else if (tab === 5)
       return (
         <div>
-        <Nav user={user} setUser={setUser}/>
+        <Nav user={user} setUser={setUser} setTab={setTab}/>
         <Sidebar setTab={setTab}/>
         {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle} setUser={setUser}/> : <Register setRegisterToggle={setRegisterToggle} /> }
         </div>
