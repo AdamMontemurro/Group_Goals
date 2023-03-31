@@ -12,6 +12,7 @@ const Landing = ({user,setUser}) => {
 
 const [tab, setTab] = useState(1)
 const [registerToggle, setRegisterToggle] = useState(true)
+const [note, setNote] = useState('')
 
   if (tab === 1) {
   return (
@@ -32,7 +33,7 @@ const [registerToggle, setRegisterToggle] = useState(true)
         <div>
           <Nav user={user} setUser={setUser}v/>
           <Sidebar setTab={setTab}/>
-          <Notepad />
+          <Notepad setNote={setNote} note={note} />
         </div>
       )} 
       else if (tab === 4)
