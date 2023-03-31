@@ -120,3 +120,58 @@ p {
 .goldText {
   color: rgb(228, 177, 39)
 }
+
+.task-wrapper{
+  width:33%;
+  max-height: 250px;
+  margin-bottom: 2rem;
+
+}
+
+.task-container {
+  display: flex;
+  background-color: #222b36;
+  margin:3px;
+  max-width: 250px;
+  text-align: center;
+  align-items:center;
+  flex-direction: column;
+
+}
+
+.task-container > h3 {
+  display: flex;
+  color: rgb(228, 177, 39);
+  
+}
+
+.task-description {
+  margin-bottom: 4px;
+  
+}
+
+.button-container {
+  display: flex;
+  max-width: 250px;
+  justify-content: center;
+}
+.button-container > button {
+  border:1px solid #3c4752;
+  color: #9098a0;
+  background-color: #222b36;
+  border-radius: 6px;
+  margin:3px
+}
+
+.map-area {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 600px;
+  align-content: start;
+  margin-left: 1rem;
+}
+
+h1 {
+  margin-left: 1rem;
+}

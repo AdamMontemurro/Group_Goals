@@ -15,6 +15,7 @@ const Landing = ({user,setUser}) => {
 const [tab, setTab] = useState(1)
 const [registerToggle, setRegisterToggle] = useState(true)
 const [note, setNote] = useState('')
+const [tasks,setTasks] = useState([{name: 'go to store', description: 'walmart'}])
 
   if (tab === 1) {
   return (
@@ -43,7 +44,7 @@ const [note, setNote] = useState('')
           <div>
             <Nav user={user} setUser={setUser} setTab={setTab}/>
             <Sidebar setTab={setTab}/>
-            {user ? <Task user={user} /> : <GuestTask /> }
+            {user ? <Task user={user} /> : <GuestTask tasks={tasks} setTasks={setTasks} /> }
           </div>
         )
       else if (tab === 5)

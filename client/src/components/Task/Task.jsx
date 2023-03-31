@@ -54,13 +54,23 @@ const onSubmit = (e) => {
 
 useEffect(() => {
   getUserTasks()
-}, [])
+}, [userTasks])
 
   return (
     <div className='main-content'>
       <h1>Current Tasks:</h1>
-      <div>
-        map over tasks
+      <div className='map-area'>
+        {userTasks.map((x) => (
+          <div className='task-wrapper'>
+          <div className='task-container'> 
+            <h3>{x.name}</h3>
+            <span className='task-description'>Description: {x.description}</span>
+          </div>
+          <div className='button-container'>
+          <button className='task-button'>Delete</button><button className='task-button'>Edit</button>
+          </div>
+          </div>
+        ))}
       </div>
       <div>
         {!newTaskForm ? <button onClick={flipTaskForm} className="statusButton">New Task</button> : null }
