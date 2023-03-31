@@ -2,7 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Client from './services/api'
-import Login from './components/Login-Register/Login';
 import Landing from './components/Landing';
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      checkToken()
+    checkToken()
     }
   }, [])
 
@@ -34,7 +33,6 @@ function App() {
     <div className="App">
       <Routes>
       <Route path='/' element={<Landing user={user} setUser={setUser}/>} />
-      <Route path='/login' element={<Login setUser={setUser} />} />
       </Routes>
     </div>
   );

@@ -1,19 +1,9 @@
-import Nav from "../Nav"
-import Sidebar from "../Sidebar"
-import LoginForm from "./LoginForm"
-import Register from "./Register"
-import { useState } from 'react'
+import React from 'react'
 
-
-const Login = ({setUser}) => {
-
-  const [registerToggle, setRegisterToggle] = useState(true)
-
+const Login = () => {
   return (
     <div>
-      <Nav />
-      <Sidebar />
-      {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle} setUser={setUser}/> : <Register setRegisterToggle={setRegisterToggle} /> }
+      
     </div>
   )
 }

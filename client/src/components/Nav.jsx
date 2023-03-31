@@ -1,6 +1,6 @@
 import {  Link, useNavigate } from 'react-router-dom'
 
-const Nav = ({user, setUser}) => {
+const Nav = ({user, setUser, setTab}) => {
   const navigate = useNavigate()
 
   const handleLogOut = () => {
@@ -9,6 +9,9 @@ const Nav = ({user, setUser}) => {
     navigate('/Login')
   }
 
+  const onClick =(x)=> {
+    setTab(x)
+}
 
   return (
     <div className='header'>
@@ -18,7 +21,7 @@ const Nav = ({user, setUser}) => {
       <div className='userArea'>
         {/* <a className='statusButton' style={{ cursor: "pointer" }} onClick={()=>navigate('/')}>Login</a> */}
         {user ? <a style={{ cursor: "pointer" }} onClick={() => handleLogOut()}>Logout</a>
-        : <Link to="/Login" className='statusButton' activeclassname="active" style={{ cursor: "pointer" }}>Login</Link> }
+        : <a className='statusButton' activeclassname="active" style={{ cursor: "pointer" }} onClick={()=>onClick(5)}>Login</a> }
       </div>
     </div>
   )

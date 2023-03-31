@@ -1,12 +1,12 @@
 import React from 'react'
 import SideNav from './SideNav'
 
-const Sidebar = () => {
+const Sidebar = ({setTab}) => {
 
 
   return (
     <div className='sideBar'>
-      <SideNav />
+      <SideNav setTab={setTab}/>
     </div>
   )
 }
