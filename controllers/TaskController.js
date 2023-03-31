@@ -35,9 +35,7 @@ const EditTask = async (req, res) => {
 
 const GetUserTasks = async (req,res) => {
   try {
-    const {userid} = req.body
-    const user = await User.findByPk(userid)
-    const userTasks = [...user.tasks]
+    const userTasks= await Task.findAll({where: {userId: req.params.id}})
     res.send(userTasks)
 
   } catch (error) {

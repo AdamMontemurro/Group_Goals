@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Client from '../../services/api'
 
 const Task = ({user}) => {
@@ -33,12 +33,27 @@ const addTask = async (data) => {
   }
 }
 
+const getUserTasks = async (data) => {
+  try {
+    const res= await Client.get(`/tasks/${userId}`, data)
+    return res.data
+  } catch (error) {
+    
+  }
+}
+
 const onSubmit = (e) => {
   e.preventDefault()
   addTask(formValues)
   setFormValues(initialState)
+  flipTaskForm()
 }
 
+
+
+useEffect(() => {
+  
+}, [])
 
   return (
     <div className='main-content'>
@@ -48,7 +63,7 @@ const onSubmit = (e) => {
       </div>
       <div>
         {!newTaskForm ? <button onClick={flipTaskForm} className="statusButton">New Task</button> : null }
-        <form onSubmit={onSubmit}>
+        { newTaskForm ? <form onSubmit={onSubmit}>
           <label htmlFor="name">Task Name: </label> <br></br>
             <input
               name="name"
@@ -70,7 +85,7 @@ const onSubmit = (e) => {
             />
       <br></br>
           <button type="submit" className="statusButton">Add Task</button>
-        </form>
+        </form> : null}
       </div>
     </div>
   )
