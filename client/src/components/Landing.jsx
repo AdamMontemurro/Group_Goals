@@ -7,6 +7,8 @@ import Calculator from "./Calculator/Calculator"
 import Notepad from "./Notepad"
 import LoginForm from "./Login-Register/LoginForm"
 import Register from "./Login-Register/Register"
+import Task from "./Task/Task"
+import GuestTask from "./Task/GuestTask"
 
 const Landing = ({user,setUser}) => {
 
@@ -38,7 +40,11 @@ const [note, setNote] = useState('')
       )} 
       else if (tab === 4)
         return(
-          <div>4</div>
+          <div>
+            <Nav user={user} setUser={setUser} setTab={setTab}/>
+            <Sidebar setTab={setTab}/>
+            {user ? <Task user={user} /> : <GuestTask /> }
+          </div>
         )
       else if (tab === 5)
       return (

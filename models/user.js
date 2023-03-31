@@ -12,12 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.belongsToMany(models.Group, {
         foreignKey: 'groupId',
-        through: 'group_users'
-      })
+        through: 'group_users'})
 
-      User.hasMany(models.Task)
-    }
+      User.hasMany(models.Task, {
+        foreignKey: 'userId'
+      })
+    } 
   }
+
   User.init({
     firstName: {
       type: DataTypes.STRING,
@@ -43,10 +45,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     }
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'User',
     tableName: 'users'
   });
   return User;
-};
+}

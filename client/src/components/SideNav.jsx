@@ -30,7 +30,7 @@ const SideNav = ({setTab}) => {
           </div>
         </li>
         <li className='list-item'>
-          <div className='list-item-div'>
+          <div style={{ cursor: "pointer" }} onClick={()=>onClick(4)} className='list-item-div'>
             Tasks
           </div>
         </li>
