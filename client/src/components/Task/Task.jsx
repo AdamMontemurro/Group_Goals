@@ -59,6 +59,7 @@ const onSubmit = (e) => {
   addTask(formValues)
   setFormValues(initialState)
   flipTaskForm()
+  getUserTasks()
 }
 
 const handleEditCick =(x)=> {
@@ -89,7 +90,7 @@ const cancelEdit = () => {
 
 useEffect(() => {
   getUserTasks()
-}, [userTasks])
+}, [])
 
   return (
     <div className='main-content'>

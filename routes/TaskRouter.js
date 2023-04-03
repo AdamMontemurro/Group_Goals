@@ -11,6 +11,9 @@ middleware.stripToken,
 middleware.verifyToken, 
 controller.DeleteTask)
 
-router.get('/:id', controller.GetUserTasks)
+router.get('/:id', 
+middleware.stripToken,
+middleware.verifyToken,
+controller.GetUserTasks)
 
 module.exports = router
