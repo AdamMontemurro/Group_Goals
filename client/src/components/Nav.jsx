@@ -23,8 +23,8 @@ const handleLogOut = () => {
       </div>
       <div className='userArea'>
         {user ? <h4>Welcome! <span className='users-name'>{user.user.name}</span></h4> : null}
-        {user ? <h4 className='statusButton' style={{ cursor: "pointer" }} onClick={() => handleLogOut()}>Logout</h4>
-        : <h4 className='statusButton' activeclassname="active" style={{ cursor: "pointer" }} onClick={()=>onClick(5)}>Login</h4> }
+        {user ? <h4 className='statusButton' style={{ marginRight: "1rem", cursor: "pointer" }} onClick={() => handleLogOut()}>Logout</h4>
+        : <h4 style={{ marginRight: "1rem", cursor: "pointer", }} className='statusButton' activeclassname="active" onClick={()=>onClick(5)}>Login</h4> }
       </div>
     </div>
   )
