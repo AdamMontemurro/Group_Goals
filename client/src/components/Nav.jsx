@@ -22,7 +22,7 @@ const handleLogOut = () => {
       <img className="logo-image" src="https://i.imgur.com/5RIIekP.png" alt="logo" ></img>
       </div>
       <div className='userArea'>
-        {user ? <h4>Welcome! {user.user.name}</h4> : null}
+        {user ? <h4>Welcome! <span className='users-name'>{user.user.name}</span></h4> : null}
         {user ? <h4 className='statusButton' style={{ cursor: "pointer" }} onClick={() => handleLogOut()}>Logout</h4>
         : <h4 className='statusButton' activeclassname="active" style={{ cursor: "pointer" }} onClick={()=>onClick(5)}>Login</h4> }
       </div>
