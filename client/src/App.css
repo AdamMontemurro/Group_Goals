@@ -207,3 +207,10 @@ h1 {
 form { 
   text-align: center
 }
+
+.new-task {
+  display: flex;
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+}

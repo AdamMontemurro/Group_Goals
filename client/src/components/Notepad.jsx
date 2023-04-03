@@ -10,7 +10,7 @@ const Notepad = ({note, setNote}) => {
 
   return (
     <div className='main-content loginform'>
-      <label >Notepad:</label>
+      <h1 >Notepad:</h1>
       <br></br>
       <textarea rows="12" cols="50"
       name='note'

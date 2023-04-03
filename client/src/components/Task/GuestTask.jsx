@@ -49,7 +49,7 @@ const GuestTask = ({tasks,setTasks,removeTask}) => {
         ))}
 
       </div>
-      <div>
+      <div className='task-forms'>
       {!newTaskForm ? <button onClick={flipTaskForm} className="statusButton">New Task</button> : null }
       { newTaskForm ? <form onSubmit={onSubmit}>
           <label htmlFor="name">Task Name: </label> <br></br>
@@ -72,7 +72,8 @@ const GuestTask = ({tasks,setTasks,removeTask}) => {
               required
             />
       <br></br>
-          <button type="submit" className="statusButton">Add Task</button>
+      <br></br>
+          <button type="submit" className="statusButton">Add Task</button> 
         </form> : null}
       </div>
     </div>
