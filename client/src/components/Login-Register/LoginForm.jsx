@@ -3,7 +3,7 @@ import Client from '../../services/api'
 import { useState } from 'react'
 
 
-const LoginForm = ({setRegisterToggle, setUser}) => {
+const LoginForm = ({setRegisterToggle, setUser, setTab }) => {
 
 
   const loginUser = async (data) => {
@@ -39,6 +39,7 @@ const onSubmit= async (e) => {
   const payload = await loginUser(formValues)
   setUser(payload)
   setFormValues(initialState)
+  setTab(4)
 }
 
   return (

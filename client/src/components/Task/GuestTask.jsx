@@ -43,7 +43,7 @@ const GuestTask = ({tasks,setTasks,removeTask}) => {
             <span className='task-description'>Description: {x.description}</span>
           </div>
           <div className='button-container'>
-          <button onClick={()=>handleDelete(x.name)} className='task-button' >Delete</button><button className='task-button'>Edit</button>
+          <button onClick={()=>handleDelete(x.name)} className='task-button' >Delete</button>
           </div>
           </div>
         ))}

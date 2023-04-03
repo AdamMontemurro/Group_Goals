@@ -59,7 +59,7 @@ const removeTask =(x) => {
         <div>
         <Nav user={user} setUser={setUser} setTab={setTab}/>
         <Sidebar setTab={setTab}/>
-        {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle} setUser={setUser}/> : <Register setRegisterToggle={setRegisterToggle} /> }
+        {registerToggle ? <LoginForm setRegisterToggle={setRegisterToggle} setTab={setTab} setUser={setUser}/> : <Register setRegisterToggle={setRegisterToggle} /> }
         </div>
       )
   
