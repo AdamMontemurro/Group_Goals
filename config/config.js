@@ -2,7 +2,8 @@ require('dotenv').config()
 module.exports = {
   development: {
     database: 'group_goal',
-    dialect: 'postgres'
+    dialect: 'postgres',
+
   },
   test: {
     database: 'group_goal',
@@ -21,7 +22,8 @@ module.exports = {
 }
 
 
-
+// username: "postgres",
+// password: "1234"
 
 
 // {
