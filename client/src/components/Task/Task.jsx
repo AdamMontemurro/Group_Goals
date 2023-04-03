@@ -73,6 +73,7 @@ const handleEditSubmit = async (e)=> {
   editTask(taskEditId, editFormValues)
   setFormValues(initialState)
   setEditTaskForm(false)
+  getUserTasks()
   
 
 }
