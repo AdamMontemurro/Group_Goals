@@ -81,6 +81,7 @@ const handleEditSubmit = async (e)=> {
 const deleteTask = async (taskId)=> {
   
   await Client.delete(`/tasks/${taskId}`)
+  getUserTasks()
 
 }
 
@@ -127,7 +128,7 @@ useEffect(() => {
               name="description"
               type="string"
               placeholder="Enter Brief Description"
-              onChange={handleEditChange}
+              onChange={handleChange}
               defaultValue={formValues.description}
               required
             />
