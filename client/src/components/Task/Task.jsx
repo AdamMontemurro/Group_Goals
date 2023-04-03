@@ -1,3 +1,4 @@
+import { e } from 'mathjs'
 import { useState,useEffect } from 'react'
 import Client from '../../services/api'
 
@@ -11,18 +12,26 @@ const Task = ({user}) => {
     userId: `${userId}`
   }
 
-
+const [editTaskForm, setEditTaskForm] = useState(false)
+const [editFormValues, setEditFormValues] = useState(initialState)
 const [newTaskForm, setNewTaskForm] = useState(false)
 const [formValues, setFormValues] = useState(initialState)
 const [userTasks, setUserTasks] = useState([])
+const [taskEditId, setTaskEditId] = useState('')
 
 const handleChange = (e) => {
   setFormValues({ ...formValues, [e.target.name]: e.target.value })
 }
 
+const handleEditChange = (e) => {
+  setEditFormValues({...editFormValues, [e.target.name]: e.target.value})
+}
+
 const flipTaskForm= ()=> {
   setNewTaskForm(!newTaskForm)
 }
+
+
 
 const addTask = async (data) => {
   try {
@@ -32,6 +41,10 @@ const addTask = async (data) => {
     console.log(error);
     throw error
   }
+}
+
+const editTask = async (taskId, data)=> {
+  await Client.put(`/tasks/${taskId}`, data)
 }
 
 const getUserTasks = async (data) => {
@@ -50,10 +63,30 @@ const onSubmit = (e) => {
   flipTaskForm()
 }
 
+const handleEditCick =(x)=> {
+  setEditTaskForm(true)
+  setTaskEditId(x)
+  
+}
+
+const handleEditSubmit = async (e)=> {
+  e.preventDefault()
+  editTask(taskEditId, editFormValues)
+  setFormValues(initialState)
+  setEditTaskForm(false)
+  
+
+}
+
 const deleteTask = async (taskId)=> {
   
   await Client.delete(`/tasks/${taskId}`)
 
+}
+
+const cancelEdit = () => {
+  setEditTaskForm(false )
+  setTaskEditId('')
 }
 
 
@@ -67,13 +100,13 @@ useEffect(() => {
       <h1>Current Tasks:</h1>
       <div className='map-area'>
         {userTasks.map((x) => (
-          <div className='task-wrapper'>
+          <div className='task-wrapper' key={x.id} >
           <div className='task-container'> 
             <h3>{x.name}</h3>
             <span className='task-description'>Description: {x.description}</span>
           </div>
           <div className='button-container'>
-          <button onClick={()=>deleteTask(x.id)} className='task-button'>Delete</button><button className='task-button'>Edit</button>
+          <button onClick={()=>deleteTask(x.id)} className='task-button'>Delete</button><button onClick={()=>handleEditCick(x.id)} className='task-button'>Edit</button>
           </div>
           </div>
         ))}
@@ -91,18 +124,44 @@ useEffect(() => {
               required
             />
       <br></br>
-          <label htmlFor="description">Task Name: </label> <br></br>
+          <label htmlFor="description">Task Description: </label> <br></br>
             <input
               name="description"
               type="string"
               placeholder="Enter Brief Description"
-              onChange={handleChange}
+              onChange={handleEditChange}
               defaultValue={formValues.description}
               required
             />
       <br></br>
           <button type="submit" className="statusButton">Add Task</button>
         </form> : null}
+        {editTaskForm ? 
+        <form onSubmit={handleEditSubmit}>
+          <label htmlFor="name">Edited Name: </label> <br></br>
+            <input
+              name="name"
+              type="string"
+              placeholder="Enter Task Name"
+              onChange={handleEditChange}
+              defaultValue={editFormValues.name}
+              required
+            />
+      <br></br>
+          <label htmlFor="description">Edited Description: </label> <br></br>
+            <input
+              name="description"
+              type="string"
+              placeholder="Enter Brief Description"
+              onChange={handleEditChange}
+              defaultValue={editFormValues.description}
+              required
+            />
+      <br></br>
+          <div className="statusButton cancelButton" onClick={cancelEdit}> Cancel</div>
+          <button type="submit" className="statusButton">Submit Edit</button>
+          
+        </form> : null }
       </div>
     </div>
   )

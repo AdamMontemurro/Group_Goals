@@ -1,10 +1,10 @@
 body {
 
-    text-align: left;
-    background-color: #171c24;
-    color: #fff;
-    margin: 0;
-    padding-bottom: 50px;
+  text-align: left;
+  background-color: #171c24;
+  color: #fff;
+  margin: 0;
+  padding-bottom: 50px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -28,14 +28,14 @@ body {
 }
 
 .userArea {
-    height: 50px;
-    margin-right: 10px;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
+  height: 50px;
+  margin-right: 10px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
 
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .sideBar {
-  height: 100vh!important;
+  height: 100vh !important;
   float: left;
   position: fixed;
   margin-top: 50px;
@@ -64,19 +64,19 @@ body {
   width: 270px;
   min-width: 270px;
   text-align: left;
-  transition: width,left,right,.3s;
+  transition: width, left, right, .3s;
   position: relative;
   z-index: 10;
 }
 
 input {
   background-color: #3c4752;
-  color:#adadad
+  color: #adadad
 }
 
 .main-content {
-    padding-top: 50px;
-    margin-left: 270px;
+  padding-top: 50px;
+  margin-left: 270px;
 }
 
 h2 {
@@ -121,8 +121,8 @@ p {
   color: rgb(228, 177, 39)
 }
 
-.task-wrapper{
-  width:33%;
+.task-wrapper {
+  width: 33%;
   max-height: 250px;
   margin-bottom: 2rem;
 
@@ -131,23 +131,23 @@ p {
 .task-container {
   display: flex;
   background-color: #222b36;
-  margin:3px;
+  margin: 3px;
   max-width: 250px;
   text-align: center;
-  align-items:center;
+  align-items: center;
   flex-direction: column;
 
 }
 
-.task-container > h3 {
+.task-container>h3 {
   display: flex;
   color: rgb(228, 177, 39);
-  
+
 }
 
 .task-description {
   margin-bottom: 4px;
-  
+
 }
 
 .button-container {
@@ -155,12 +155,13 @@ p {
   max-width: 250px;
   justify-content: center;
 }
-.button-container > button {
-  border:1px solid #3c4752;
+
+.button-container>button {
+  border: 1px solid #3c4752;
   color: #9098a0;
   background-color: #222b36;
   border-radius: 6px;
-  margin:3px
+  margin: 3px
 }
 
 .map-area {
@@ -174,4 +175,15 @@ p {
 
 h1 {
   margin-left: 1rem;
+}
+
+.cancelButton {
+  width: 20px;
+  font-size: 8px;
+  color: white;
+  background-color: #222b36;
+}
+
+.cancelButton:hover {
+  cursor: pointer;
 }
