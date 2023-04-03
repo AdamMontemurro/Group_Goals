@@ -2,9 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
 const app = express()
-const UserRouter = require('./routes/UserRouter')
-const GroupRouter = require('./routes/GroupRouter')
-const TaskRouter = require('./routes/TaskRouter')
+const UserRouter = require('./routes/api/UserRouter')
+const GroupRouter = require('./routes/api/GroupRouter')
+const TaskRouter = require('./routes/api/TaskRouter')
+
+
 
 const PORT = process.env.PORT || 3001
 
@@ -16,9 +18,11 @@ app.use(express.static(`${__dirname}/client/build`))
 
 app.get('/', (req, res) => res.json({ message: 'Group Goal' }))
 
-app.use('/users', UserRouter)
-app.use('/groups', GroupRouter)
-app.use('/tasks', TaskRouter)
+
+
+app.use('/api/users', UserRouter)
+app.use('/api/groups', GroupRouter)
+app.use('/api/tasks', TaskRouter)
 
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
