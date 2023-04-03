@@ -132,7 +132,7 @@ useEffect(() => {
               required
             />
       <br></br>
-          <div className="statusButton cancelButton" onClick={flipTaskForm}> Cancel</div>
+          <div className="cancelButton" onClick={flipTaskForm}> Cancel</div>
           <button type="submit" className="statusButton">Add Task</button>
         </form> : null}
         {editTaskForm ? 
@@ -157,7 +157,7 @@ useEffect(() => {
               required
             />
       <br></br>
-          <div className="statusButton cancelButton" onClick={cancelEdit}> Cancel</div>
+          <div className="cancelButton" onClick={cancelEdit}> Cancel</div>
           <button type="submit" className="statusButton">Submit Edit</button>
           
         </form> : null }
