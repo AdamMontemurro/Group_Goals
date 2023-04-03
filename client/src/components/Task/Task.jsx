@@ -50,6 +50,12 @@ const onSubmit = (e) => {
   flipTaskForm()
 }
 
+const deleteTask = async (taskId)=> {
+  
+  await Client.delete(`/tasks/${taskId}`)
+
+}
+
 
 
 useEffect(() => {
@@ -67,7 +73,7 @@ useEffect(() => {
             <span className='task-description'>Description: {x.description}</span>
           </div>
           <div className='button-container'>
-          <button className='task-button'>Delete</button><button className='task-button'>Edit</button>
+          <button onClick={()=>deleteTask(x.id)} className='task-button'>Delete</button><button className='task-button'>Edit</button>
           </div>
           </div>
         ))}
