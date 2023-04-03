@@ -40,8 +40,8 @@ body {
 }
 
 .statusButton {
-  color: rgb(60, 71, 82);
-  background: white;
+  color: white;
+  background: #3c4752;
   border: 2px solid rgb(60, 71, 82);
   padding: 5px 15px;
   margin-right: 15px;
