@@ -9,6 +9,7 @@ import LoginForm from "./Login-Register/LoginForm"
 import Register from "./Login-Register/Register"
 import Task from "./Task/Task"
 import GuestTask from "./Task/GuestTask"
+import { xgcd } from "mathjs"
 
 const Landing = ({user,setUser}) => {
 
@@ -16,6 +17,12 @@ const [tab, setTab] = useState(1)
 const [registerToggle, setRegisterToggle] = useState(true)
 const [note, setNote] = useState('')
 const [tasks,setTasks] = useState([{name: 'go to store', description: 'walmart'}])
+
+const removeTask =(x) => {
+  const value = x
+  let newTasks = tasks.filter(function(y){return y.name !=value})
+  setTasks(newTasks)
+}
 
   if (tab === 1) {
   return (
@@ -44,7 +51,7 @@ const [tasks,setTasks] = useState([{name: 'go to store', description: 'walmart'}
           <div>
             <Nav user={user} setUser={setUser} setTab={setTab}/>
             <Sidebar setTab={setTab}/>
-            {user ? <Task user={user} /> : <GuestTask tasks={tasks} setTasks={setTasks} /> }
+            {user ? <Task user={user} /> : <GuestTask removeTask={removeTask} tasks={tasks} setTasks={setTasks} /> }
           </div>
         )
       else if (tab === 5)

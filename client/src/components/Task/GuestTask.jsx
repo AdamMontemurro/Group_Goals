@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const GuestTask = ({tasks,setTasks}) => {
+const GuestTask = ({tasks,setTasks,removeTask}) => {
 
   const initialState = {
     name: '',
@@ -26,6 +26,10 @@ const GuestTask = ({tasks,setTasks}) => {
     flipTaskForm()
   }
 
+  const handleDelete = (x) =>{
+    removeTask(x)
+  }
+
 
   return (
     <div className='main-content'>
@@ -39,7 +43,7 @@ const GuestTask = ({tasks,setTasks}) => {
             <span className='task-description'>Description: {x.description}</span>
           </div>
           <div className='button-container'>
-          <button className='task-button'>Delete</button><button className='task-button'>Edit</button>
+          <button onClick={()=>handleDelete(x.name)} className='task-button' >Delete</button><button className='task-button'>Edit</button>
           </div>
           </div>
         ))}
