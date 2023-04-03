@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && npx sequelize-cli db:migrate",
     "dev": "node --watch app.js",
-    "start": "node app.js" 
   },
   "repository": {
     "type": "git",
