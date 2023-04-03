@@ -132,6 +132,7 @@ useEffect(() => {
               required
             />
       <br></br>
+          <div className="statusButton cancelButton" onClick={flipTaskForm}> Cancel</div>
           <button type="submit" className="statusButton">Add Task</button>
         </form> : null}
         {editTaskForm ? 
