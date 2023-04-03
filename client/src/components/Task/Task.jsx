@@ -1,4 +1,3 @@
-import { e } from 'mathjs'
 import { useState,useEffect } from 'react'
 import Client from '../../services/api'
 
@@ -30,7 +29,6 @@ const handleEditChange = (e) => {
 const flipTaskForm= ()=> {
   setNewTaskForm(!newTaskForm)
 }
-
 
 
 const addTask = async (data) => {
@@ -88,8 +86,6 @@ const cancelEdit = () => {
   setEditTaskForm(false )
   setTaskEditId('')
 }
-
-
 
 useEffect(() => {
   getUserTasks()
