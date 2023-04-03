@@ -109,7 +109,7 @@ useEffect(() => {
           </div>
         ))}
       </div>
-      <div>
+      <div className='task-forms'>
         {!newTaskForm ? <button onClick={flipTaskForm} className="statusButton">New Task</button> : null }
         { newTaskForm ? <form onSubmit={onSubmit}>
           <label htmlFor="name">Task Name: </label> <br></br>

@@ -197,3 +197,13 @@ h1 {
   margin-right: .5em;
   color:rgb(228, 177, 39) ;
 }
+
+.task-forms {
+
+  display: flex;
+  justify-content: center;
+}
+
+form { 
+  text-align: center
+}
