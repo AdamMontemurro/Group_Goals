@@ -71,7 +71,7 @@ const handleEditCick =(x)=> {
 const handleEditSubmit = async (e)=> {
   e.preventDefault()
   editTask(taskEditId, editFormValues)
-  setFormValues(initialState)
+  setEditFormValues(initialState)
   setEditTaskForm(false)
   getUserTasks()
   
