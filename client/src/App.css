@@ -225,3 +225,17 @@ form {
   width: fit-content;
   height: fit-content;
 }
+
+.roadmap {
+  margin-left: 2rem;
+}
+
+.roadmap-div {
+  background-color: #222b36;
+  width: fit-content;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+
+  margin-left: 3rem;
+}
