@@ -43,6 +43,7 @@ const addTask = async (data) => {
 
 const editTask = async (taskId, data)=> {
   await Client.put(`/tasks/${taskId}`, data)
+  getUserTasks()
 }
 
 const getUserTasks = async (data) => {
