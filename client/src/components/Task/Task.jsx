@@ -34,6 +34,7 @@ const flipTaskForm= ()=> {
 const addTask = async (data) => {
   try {
     const res = await Client.post('/tasks/create', data)
+    getUserTasks()
     return res.data
   } catch (error) {
     console.log(error);
