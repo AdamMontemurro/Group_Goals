@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = '/api/'
+export const BASE_URL = 'https://group-goal.herokuapp.com/api/'
 // export const BASE_URL ='http://localhost:3001/'
 
 
