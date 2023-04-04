@@ -21,6 +21,9 @@ Group Goal is a comprehensive web application designed to help groups and indivi
 
 ### ***Screenshots***
 
+![image](https://user-images.githubusercontent.com/122232068/229842900-6f0b87d5-91f9-4f12-abc1-7c81b7405879.png)
+
+
 
 ***
 
