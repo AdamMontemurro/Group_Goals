@@ -5,8 +5,7 @@ export const BASE_URL = 'https://group-goal.herokuapp.com/api/'
 
 
 const Client = Axios.create({ baseURL: BASE_URL })
-console.log(baseURL)
-console.log(Client)
+
 
 Client.interceptors.request.use(
   (config) => {
