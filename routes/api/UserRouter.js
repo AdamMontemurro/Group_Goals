@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const controller = require('../controllers/UserController')
-const middleware = require('../middleware')
+const controller = require('../../controllers/UserController')
+const middleware = require('../../middleware')
 
 //Login/Reg
 router.post('/register', controller.Register)

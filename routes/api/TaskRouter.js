@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const controller = require('../controllers/TaskController')
-const middleware = require('../middleware')
+const controller = require('../../controllers/TaskController')
+const middleware = require('../../middleware')
 
 
 router.post('/create', controller.CreateTask )

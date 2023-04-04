@@ -16,9 +16,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(`${__dirname}/client/build`))
 
-app.get('/', (req, res) => res.json({ message: 'Group Goal' }))
-
-
 
 app.use('/api/users', UserRouter)
 app.use('/api/groups', GroupRouter)
