@@ -36,3 +36,4 @@ Group Goal is a comprehensive web application designed to help groups and indivi
 - [] Chat Feature
 - [x] Login/Register
 ### Credits
+[Stoic Programmers Calc](https://www.youtube.com/c/TheStoicProgrammers)

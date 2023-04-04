@@ -18,7 +18,6 @@ const AddUser = async(req,res) => {
     const group = await Group.findByPk(groupId)
     const user = await User.findByPk(userId)
     group.addUser(user)
-    console.log('object')
     res.send(`Added user with id of ${userId} to group with id of ${groupId}`)
   } catch (error) {
     return console.log(error)
