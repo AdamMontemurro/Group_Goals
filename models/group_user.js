@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class group_user extends Model {
 
     static associate(models) {
-      // define association here
+      
     }
   }
   group_user.init({
